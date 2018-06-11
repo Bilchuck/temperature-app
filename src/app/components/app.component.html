@@ -1,0 +1,10 @@
+<div class="container">
+  <p *ngIf="!isConnected" class="status">
+    Connecting to gateway ..
+  </p>
+  <div *ngIf="isConnected">
+  <app-temperature-display>
+
+  </app-temperature-display>
+  </div>
+</div>
