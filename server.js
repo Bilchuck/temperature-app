@@ -17,7 +17,7 @@ const forceSSL = function() {
 // Run the app by serving the static files
 // in the dist directory
 app.use(forceSSL());
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '/dist/temperature-app'));
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
