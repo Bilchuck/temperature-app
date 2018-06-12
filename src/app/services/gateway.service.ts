@@ -31,7 +31,7 @@ export class GatewayService {
         const timeOut = setTimeout(() => {
           console.log(`Timeout error`);
           reject();
-        }, 1000)
+        }, 100)
         await fetch(`${url}/${IS_GATEWAY}`);
         clearTimeout(timeOut);
         resolve()
