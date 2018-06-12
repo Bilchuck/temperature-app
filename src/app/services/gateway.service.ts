@@ -45,12 +45,23 @@ export class GatewayService {
   }
 
   async findUrl (): Promise<string> {
-    const urlStart = 'http://192.168';
+    const urlStart = 'http://192.168'
+    const iphoneSpot = 'http://172.20.10'
     const masks = [0, 1];
     const from = 100;
     const to = 150;
     let url = null;
 
+    for (let i = 0; i <= 20; i++) {
+      const indexUrl = `${iphoneSpot}.${i}:${GATEWAY_PORT}`;
+      const isGateWay = await this.checkUrl(indexUrl)
+      if (isGateWay) {
+        url = indexUrl;
+      }
+    }
+    if (url) {
+      return url;
+    }
     for (let i = from; i <= to; i++) {
         for (const mask of masks) {
           const indexUrl = `${urlStart}.${mask}.${i}:${GATEWAY_PORT}`;
