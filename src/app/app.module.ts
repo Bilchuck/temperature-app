@@ -1,21 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ChartsModule } from 'ng2-charts';
+import { ChartModule } from 'angular2-chartjs';
 import { AppComponent } from './components/app.component';
 import { GatewayService } from './services/gateway.service';
 import { TemperatureDisplayComponent } from './components/temperature-display/temperature-display.component';
 import { NumbersComponent } from './components/temperature-display/numbers/numbers.component';
-import { ChartComponent } from './components/temperature-display/chart/chart.component';
+import { ChartDisplayComponent } from './components/temperature-display/chart/chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemperatureDisplayComponent,
     NumbersComponent,
-    ChartComponent
+    ChartDisplayComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    // ChartsModule,
+    ChartModule
   ],
   providers: [
     GatewayService

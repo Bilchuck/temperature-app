@@ -1,4 +1,5 @@
-<table>
+<!-- <table>
+
   <tr>
     <td>
       Temperature
@@ -15,6 +16,46 @@
       {{row.time}}
     </td>
   </tr>
-</table>
+</table> -->
+<h2>
+  Графік зміни температури за остані 60 секунд
+</h2>
+<chart [type]="type" [data]="data" [options]="options"></chart>
 
-{{chart | json}}
+
+<!-- <div class="card">
+
+    <div class="about">
+      <h3>7-12 числа</h3>
+      <p class="lead">Температура в °C</p>
+    </div>
+    <canvas id="canvas"></canvas>
+    
+    <div class="axis">
+      <div class="tick">
+        <span class="day-number">7</span>
+        <span class="day-name">СБ</span>
+        <span class="value value--this">14°C</span>
+      </div>
+      <div class="tick">
+        <span class="day-number">8</span>
+        <span class="day-name">НД</span>
+        <span class="value value--this">22°C</span>
+      </div>
+      <div class="tick">
+        <span class="day-number">9</span>
+        <span class="day-name">ПН</span>
+        <span class="value value--this">12°C</span>
+      </div>
+      <div class="tick">
+        <span class="day-number">10</span>
+        <span class="day-name">ВТ</span>
+        <span class="value value--this">20°C</span>
+      </div>
+      <div class="tick">
+        <span class="day-number">11</span>
+        <span class="day-name">СЕР</span>
+        <span class="value value--this">12°C</span>
+      </div>
+    </div>
+  </div> -->

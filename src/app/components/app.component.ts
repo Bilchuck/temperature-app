@@ -26,6 +26,7 @@ export class AppComponent {
     } else {
       this.connectionMessage = 'gateway not found!'
     }
+    this.isConnected = true
   }
   async reconnectHandler (): Promise<void> {
     await this.checkConnection();

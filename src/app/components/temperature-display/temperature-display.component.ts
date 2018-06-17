@@ -13,7 +13,7 @@ import { IChart } from '../../models/IChart';
 })
 export class TemperatureDisplayComponent implements OnInit {
   temperature: Observable<number>;
-  chart: IChart[];
+  chart: Observable<IChart[]>;
 
   constructor(private gs: GatewayService) { }
 
@@ -21,7 +21,9 @@ export class TemperatureDisplayComponent implements OnInit {
     this.temperature = interval(1000)
       .pipe(flatMap(() => from(this.gs.getTemperature())))
       .pipe(map((resp) => resp.temperature));
-    this.chart = await this.gs.getChart()
+
+    this.chart = interval(1000)
+      .pipe(flatMap(() => from(this.gs.getChart())))
   }
 
 }
