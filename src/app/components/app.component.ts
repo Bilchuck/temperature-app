@@ -16,7 +16,7 @@ export class AppComponent {
   }
 
   async checkConnection (): Promise<void> {
-    this.connectionMessage = 'Connecting..';
+    this.connectionMessage = 'Пошук сервера..';
 
     await this.gs.checkConnection();
     this.isConnected = this.gs.isConnected;
