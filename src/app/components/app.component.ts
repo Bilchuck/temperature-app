@@ -22,11 +22,10 @@ export class AppComponent {
     this.isConnected = this.gs.isConnected;
     
     if (this.isConnected) {
-      this.connectionMessage = 'Conected!'
+      this.connectionMessage = ''
     } else {
-      this.connectionMessage = 'gateway not found!'
+      this.connectionMessage = 'Сервер не знайдено!'
     }
-    this.isConnected = true
   }
   async reconnectHandler (): Promise<void> {
     await this.checkConnection();
